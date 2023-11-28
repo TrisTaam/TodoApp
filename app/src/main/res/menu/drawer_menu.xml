@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/drawer_category_menu"
+        android:checkableBehavior="single">
+    </group>
+
+    <group android:id="@+id/drawer_other_menu"
+        android:checkableBehavior="single">
+        <item android:id="@+id/drawer_theme_menu"
+            android:orderInCategory="1"
+            android:title="@string/theme"
+            android:icon="@drawable/ic_color_len"/>
+
+        <item android:id="@+id/drawer_donate_menu"
+            android:orderInCategory="1"
+            android:title="@string/donate"
+            android:icon="@drawable/ic_heart"/>
+
+        <item android:id="@+id/drawer_info_menu"
+            android:orderInCategory="1"
+            android:title="@string/about"
+            android:icon="@drawable/ic_info"/>
+
+        <item android:id="@+id/drawer_setting_menu"
+            android:orderInCategory="1"
+            android:title="@string/settings"
+            android:icon="@drawable/ic_setting"/>
+    </group>
+</menu>

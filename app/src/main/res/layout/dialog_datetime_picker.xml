@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <CalendarView
+        android:id="@+id/dialog_datetime_picker_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/dialog_datetime_picker_chip_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:chipSpacingVertical="0dp"
+        app:singleSelection="true"
+        app:selectionRequired="false"
+        android:layout_marginHorizontal="16dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dialog_datetime_picker_no_date_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/no_date"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dialog_datetime_picker_today_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/today"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dialog_datetime_picker_tomorrow_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/tomorrow"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dialog_datetime_picker_3_days_later_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/_3_days_later"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/dialog_datetime_picker_next_week_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/next_week"/>
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <LinearLayout
+        android:id="@+id/dialog_datetime_picker_time_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="4dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_clock"
+            app:tint="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:text="@string/time"/>
+
+        <TextView
+            android:id="@+id/dialog_datetime_picker_time_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/darker_gray"
+            android:text="@string/none"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_datetime_picker_repeat_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="4dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_repeat"
+            app:tint="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:text="@string/repeat"/>
+
+        <TextView
+            android:id="@+id/dialog_datetime_picker_repeat_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/darker_gray"
+            android:text="@string/none"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+        <TextView
+            android:id="@+id/dialog_datetime_picker_cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?attr/materialIconButtonStyle"
+            android:textAllCaps="true"
+            android:text="@string/cancel"/>
+        <TextView
+            android:id="@+id/dialog_datetime_picker_done_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="16dp"
+            style="?attr/materialIconButtonStyle"
+            android:textAllCaps="true"
+            android:text="@string/done"/>
+    </LinearLayout>
+</LinearLayout>

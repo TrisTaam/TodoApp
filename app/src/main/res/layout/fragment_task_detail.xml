@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screen.task.taskdetail.TaskDetailFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/task_detail_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/task_detail_category_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        style="?attr/materialButtonOutlinedStyle"
+        android:textSize="12sp"
+        android:text="@string/no_category"/>
+
+    <EditText
+        android:id="@+id/task_detail_title_txt"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        tools:text="This is a title"
+        android:textSize="20sp"
+        android:background="@android:color/transparent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/task_detail_subtask_rcv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        tools:listitem="@layout/viewholder_subtask"
+        tools:itemCount="3"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/task_detail_add_subtask_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/add_sub_task"
+        android:textAlignment="viewStart"
+        app:icon="@drawable/ic_add"
+        style="?attr/materialButtonOutlinedStyle"
+        android:background="@android:color/transparent"/>
+
+    <LinearLayout
+        android:id="@+id/task_detail_due_date_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="4dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_calendar"
+            app:tint="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:text="@string/due_date_time"/>
+
+        <TextView
+            android:id="@+id/task_detail_due_date_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/darker_gray"
+            android:text="@string/none"
+            tools:text="29-59 01/12/2023"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/task_detail_reminder_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="4dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_clock"
+            app:tint="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:text="@string/reminder_at"/>
+
+        <TextView
+            android:id="@+id/task_detail_reminder_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/darker_gray"
+            android:text="@string/none"
+            tools:text="5 minutes before"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/task_detail_repeat_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="4dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_repeat"
+            app:tint="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:text="@string/repeat"/>
+
+        <TextView
+            android:id="@+id/task_detail_repeat_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/darker_gray"
+            android:text="@string/none"
+            tools:text="Daily"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="4dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            app:tint="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:text="@string/note"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/task_detail_note_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="32dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/darker_gray"
+        tools:text="This is a note\nThis is still a note"/>
+
+    <LinearLayout
+        android:id="@+id/task_detail_attachment_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="4dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_attachment_horz"
+            app:tint="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:text="@string/attachment"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textAlignment="viewEnd"
+            android:textColor="@android:color/darker_gray"
+            android:textAllCaps="true"
+            android:text="@string/add"/>
+    </LinearLayout>
+
+
+</LinearLayout>

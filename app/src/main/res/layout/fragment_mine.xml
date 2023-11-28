@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".screen.mine.MineFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+<!--        User Information-->
+
+        <ImageView
+            android:id="@+id/mine_user_pfp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            tools:src="@mipmap/ic_launcher"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mine_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Full name User"
+            app:layout_constraintTop_toTopOf="@id/mine_user_pfp"
+            app:layout_constraintStart_toEndOf="@id/mine_user_pfp"
+            style="@style/TextAppearance.Material3.ActionBar.Title"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginStart="16dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mine_user_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Local Account"
+            app:layout_constraintTop_toBottomOf="@id/mine_user_name"
+            app:layout_constraintStart_toEndOf="@id/mine_user_pfp"
+            style="@style/TextAppearance.Material3.ActionBar.Subtitle"
+            android:textColor="?attr/colorSecondary"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"/>
+
+<!--        Completed Task-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mine_completed_task_count_card"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toBottomOf="@id/mine_user_pfp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/mine_pending_task_count_card"
+            app:cardBackgroundColor="?attr/colorPrimaryContainer"
+            app:strokeWidth="0dp"
+            android:layout_marginTop="16dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mine_completed_task_count_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/mine_completed_task_count_card"
+            app:layout_constraintStart_toStartOf="@id/mine_completed_task_count_card"
+            app:layout_constraintEnd_toEndOf="@id/mine_completed_task_count_card"
+            android:layout_marginTop="16dp"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textAlignment="center"
+            android:text="@string/completed"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mine_completed_task_count_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/mine_completed_task_count_card"
+            app:layout_constraintEnd_toEndOf="@id/mine_completed_task_count_card"
+            app:layout_constraintTop_toBottomOf="@id/mine_completed_task_count_title"
+            android:layout_marginTop="8dp"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textAlignment="center"
+            tools:text="1234"/>
+
+<!--        Pending task-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mine_pending_task_count_card"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toBottomOf="@id/mine_user_pfp"
+            app:layout_constraintStart_toEndOf="@id/mine_completed_task_count_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardBackgroundColor="?attr/colorTertiaryContainer"
+            app:strokeWidth="0dp"
+            android:layout_marginTop="16dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mine_pending_task_count_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/mine_pending_task_count_card"
+            app:layout_constraintStart_toStartOf="@id/mine_pending_task_count_card"
+            app:layout_constraintEnd_toEndOf="@id/mine_pending_task_count_card"
+            android:layout_marginTop="16dp"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnTertiaryContainer"
+            android:textAlignment="center"
+            android:text="@string/pending"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mine_pending_task_count_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/mine_pending_task_count_title"
+            app:layout_constraintEnd_toEndOf="@id/mine_pending_task_count_title"
+            app:layout_constraintTop_toBottomOf="@id/mine_pending_task_count_title"
+            android:layout_marginTop="8dp"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:textColor="?attr/colorOnTertiaryContainer"
+            android:textAlignment="center"
+            tools:text="1234"/>
+
+<!--        Task in next 7 days-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mine_task_in_7days_card"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/mine_completed_task_count_card"
+            app:layout_constraintBottom_toBottomOf="@id/mine_task_in_7days_rcv"
+            app:cardBackgroundColor="?attr/colorErrorContainer"
+            app:strokeWidth="0dp"
+            android:layout_marginTop="16dp"/>
+        
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mine_task_in_7days_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/mine_task_in_7days_card"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="?attr/colorOnErrorContainer"
+            android:text="@string/tasks_in_next_7_days"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mine_task_in_7days_rcv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mine_task_in_7days_title"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:paddingBottom="8dp"
+            android:textColor="?attr/colorOnErrorContainer"
+            android:text="@string/tasks_in_next_7_days"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            tools:listitem="@layout/viewholder_task_simple"
+            tools:itemCount="5"/>
+
+<!--        Pending task stats-->
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mine_task_stats_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/mine_task_in_7days_card"
+                app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                app:strokeWidth="0dp"
+                android:layout_marginTop="16dp">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/mine_task_stats_pie_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:padding="8dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
