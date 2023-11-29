@@ -1,5 +1,6 @@
 package me.dev.todoapp.screen
 
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.view.GravityCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.onNavDestinationSelected
@@ -40,9 +42,22 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initUI()
+        requestPermissions()
         setupBottomNav()
         setupNavDrawer()
         binding.fab.setOnClickListener { fabOnClick() }
+    }
+
+    private fun requestPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(
+                    android.Manifest.permission.POST_NOTIFICATIONS,
+                ),
+                1
+            )
+        }
     }
 
     private fun initUI() {
@@ -167,7 +182,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //
     private fun showAddTaskDialog() {
         val dialog = AddTaskDialogFragment.newInstance(object : IAddTaskListener {
             override fun onFinish(result: Int, categoryId: Int?) {

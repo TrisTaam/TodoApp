@@ -16,7 +16,6 @@ object Alarm {
             context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, AlarmReceiver::class.java)
         intent.putExtra("bundle", bundle)
-        Log.d("Alarm", "createAlarm: $bundle")
         val pendingIntent = PendingIntent.getBroadcast(
             context, alarmId, intent,
             PendingIntent.FLAG_IMMUTABLE
